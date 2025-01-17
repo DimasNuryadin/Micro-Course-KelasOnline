@@ -20,6 +20,11 @@ class Course extends Model
         'mentor_id'
     ];
 
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:m:s',
+        'updated_at' => 'datetime:Y-m-d H:m:s'
+    ];
+
     // Menghubungkan dengan table mentor
     public function mentor()
     {
