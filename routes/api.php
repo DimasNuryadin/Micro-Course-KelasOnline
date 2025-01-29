@@ -32,6 +32,7 @@ Route::delete('/mentors/{id}', [MentorController::class, 'destroy']);
 Route::post('/courses', [CourseController::class, 'create']);
 Route::put('/courses/{id}', [CourseController::class, 'update']);
 Route::get('/courses', [CourseController::class, 'index']);
+Route::get('/courses/{id}', [CourseController::class, 'show']);
 Route::delete('/courses/{id}', [CourseController::class, 'destroy']);
 
 // Chapter

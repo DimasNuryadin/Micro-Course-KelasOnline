@@ -21,7 +21,7 @@ function getUser($userId)
 
 function getUserByIds($userIds = [])
 {
-  $url = env('SERVICE_USER_URL') . 'users/';
+  $url = env('SERVICE_USER_URL') . 'users';
   try {
     if (count($userIds) === 0) {
       return [
@@ -33,7 +33,7 @@ function getUserByIds($userIds = [])
 
     $response = Http::timeout(10)->get($url, ['user_ids[]' => $userIds]);
     $data = $response->json();
-    $data['http_code'] = $response->getStatusCod();
+    $data['http_code'] = $response->getStatusCode();
     return $data;
   } catch (\Throwable $th) {
     return [
